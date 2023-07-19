@@ -1,5 +1,4 @@
 import React from "react";
-import "../sass/compenants/_banner.scss";
 import "../sass/compenants/_about.scss";
 import Collapse from "../components/collapse";
 import Mountain from "../assets/images/Mountain.svg";
@@ -7,9 +6,7 @@ import Mountain from "../assets/images/Mountain.svg";
 const About = () => {
   return (
     <div className="about-container">
-      <div className="home-banner">
-        <img className="moutain" src={Mountain} alt=" montagne" />
-      </div>
+      <img className="moutain" src={Mountain} alt=" montagne" />
       <div className="about-collapse-container">
         <Collapse
           state={{

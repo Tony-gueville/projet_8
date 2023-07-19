@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../style/Accomodation.css";
+import "../sass/compenants/_accomodation.scss";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Slider from "../components/slider";

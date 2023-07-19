@@ -1,7 +1,6 @@
 import React from "react";
 import "../sass/compenants/_error.scss";
 import { Link } from "react-router-dom";
-
 const Error = () => {
   return (
     <div className="error">
