@@ -1,18 +1,19 @@
 import React from "react";
-import "../sass/compenants/_error.scss";
-import { Link } from "react-router-dom";
+
 const Error = () => {
+  document.title = "Kasa - Erreur 404";
   return (
     <div className="error">
-      <div className="error-content">
-        <p className="error-number">404</p>
-        <p className="error-text">
-          Oups! La page que vous demandez n'existe pas.
-        </p>
+      <div className="error-container">
+        <h1>404</h1>
+        <h2>
+          Oups! La page que <span className="line-break"></span> vous demandez
+          n'existe pas.
+        </h2>
       </div>
-      <Link to="/" className="error-link">
-        Retourner sur la page d'accueil
-      </Link>
+      <a className="error-redirect" href="/">
+        Retournez sur la page d'accueil
+      </a>
     </div>
   );
 };

@@ -1,38 +1,57 @@
-import "../sass/compenants/_collapse.scss";
-import { useState } from "react";
-import ArrowUp from "../assets/icons/arrow-up.svg";
-import ArrowDown from "../assets/icons/arrow-down.svg";
+import React, { useState } from "react";
+import chevronUp from "../assets/chevron-up.png";
+import chevronDown from "../assets/chevron-down.png";
 
-const Collapse = ({ state, defaultState = false }) => {
-  const [toggle, setToggle] = useState(defaultState);
-
-  const toggleHandler = () => {
-    setToggle(!toggle);
-  };
-
-  return (
-    <div className="collapse">
-      <div className="collapse-title" onClick={toggleHandler}>
-        <h3>{state.title}</h3>
-        <img
-          className="Arrow arrowUp arrowDown"
-          src={toggle ? ArrowUp : ArrowDown}
-          alt="show content"
-        />
+const Collapse = ({ title, content }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return isOpen ? (
+    <div className="collapse-container">
+      <div className="collapse">
+        <div onClick={() => setIsOpen(false)} className="collapse-header">
+          <h2 className="collapse-title">{title}</h2>
+          <img
+            className="collapse-chevron"
+            src={isOpen ? chevronUp : chevronDown}
+            alt="Chevron"
+          />
+        </div>
       </div>
-      <div className={toggle ? "collapse-content" : "collapse-content-hidden"}>
-        {state.equipments === undefined ? (
-          <p>{state.description}</p>
-        ) : (
-          <ul>
-            {state.equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          </ul>
-        )}
+      <div className="collapse-content">{content}</div>
+    </div>
+  ) : (
+    <div className="collapse-container">
+      <div className="collapse">
+        <div className="collapse-header" onClick={() => setIsOpen(true)}>
+          <h2 className="collapse-title">{title}</h2>
+          <img
+            className="collapse-chevron"
+            src={isOpen ? chevronUp : chevronDown}
+            alt="Chevron"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
 export default Collapse;
+
+// <div>
+//   <div
+//     onClick={() =>
+//       (isOpen && setIsOpen(false)) || (!isOpen && setIsOpen(true))
+//     }
+//     className="collapse"
+//   >
+//     <div className="collapse-header">
+//       <h2 className="collapse-title">{title}</h2>
+//       <img
+//         className="collapse-chevron"
+//         src={isOpen ? "./chevron-up.png" : "./chevron-down.png"}
+//       />
+//     </div>
+//     <div className={isOpen ? "show-collapse" : "hide-collapse"}>
+//       {content}
+//     </div>
+//   </div>
+// </div>

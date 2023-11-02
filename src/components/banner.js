@@ -1,22 +1,26 @@
 import React from "react";
-import "../sass/compenants/_banner.scss";
-import Cliff from "../assets/images/Cliff.svg";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 
 const Banner = () => {
-  const location = useLocation();
+  const homeImg = "./homebanner.jpg";
+  const aboutImg = "./aboutbanner.jpg";
+
+  let location = useLocation();
+
   return (
-    <div
-      className="home-banner"
-      style={location.pathname === "/a-propos" ? { height: "211px" } : {}}
-    >
-      <img src={Cliff} alt="banner kasa" />
-      {(location.pathname === "/" || location.pathname === "/Kasa") && (
-        <h1>
-          Chez vous,
-          <span className="line-break"></span> partout et ailleurs
-        </h1>
-      )}
+    <div className="kasa-banner">
+      <img
+        src={location.pathname === "/a-propos" ? aboutImg : homeImg}
+        alt="banner"
+      />
+      <div className="overlay"></div>
+      {location.pathname === "/" ? (
+        <div className="banner-text">
+          <h1>
+            Chez vous,<span className="line-break"></span> partout et ailleurs
+          </h1>
+        </div>
+      ) : null}
     </div>
   );
 };

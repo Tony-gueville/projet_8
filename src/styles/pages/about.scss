@@ -1,0 +1,9 @@
+.about-container {
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 425px) {
+  .about-container {
+    padding-bottom: 48px;
+  }
+}

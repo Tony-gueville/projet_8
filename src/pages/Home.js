@@ -1,34 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../sass/compenants/_home.scss";
-import Banner from "../components/banner";
-import Card from "../components/card";
-// import Logo from "../assets/icons/kasa-logo.svg";
-import data from "../data/logements.json";
+
+import Banner from "../components/Banner";
+import Card from "../components/Card";
 
 const Home = () => {
+  document.title = "Kasa - Accueil";
   return (
-    <div className="home-container">
+    <div>
       <Banner />
-      <div className="home-card-container">
-        <ul>
-          {data.map((acc) => {
-            return (
-              <li key={acc.id}>
-                <Link to={`/Accomodation/${acc.id}`}>
-                  <Card
-                    props={{
-                      url: acc.cover,
-                      title: acc.title,
-                    }}
-                  />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <Card />
     </div>
   );
 };
+
 export default Home;

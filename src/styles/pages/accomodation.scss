@@ -1,0 +1,295 @@
+.accomodation-container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  .accomodation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 25px auto;
+    &-header {
+      display: flex;
+      flex-direction: column;
+
+      .accomodation-title {
+        font-size: 36px;
+        color: #ff6060;
+        font-weight: 500;
+      }
+      .accomodation-location {
+        font-size: 18px;
+        color: #ff6060;
+        font-weight: 500;
+      }
+    }
+    &-host {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      p {
+        width: 70px;
+        color: #ff6060;
+        text-align: right;
+      }
+      img {
+        margin-left: 10px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50px;
+      }
+    }
+    &-tags-stars {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .tags {
+        display: flex;
+        flex-direction: row;
+
+        .accomodation-tag {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 115px;
+          height: 25px;
+          padding: 0px 30px;
+          margin-right: 10px;
+          background-color: #ff6060;
+          color: #ffffff;
+          list-style: none;
+          text-align: center;
+          border-radius: 10px;
+          transition: transform 0.4s ease-out;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+      .accomodation-stars {
+        position: relative;
+        .star {
+          width: 24px;
+          margin-left: 16px;
+        }
+
+        .filled-star-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .accomodation-host-mobile {
+        display: none;
+      }
+    }
+  }
+  .accomodation-collapse-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .collapse-container {
+      max-width: 582px;
+      width: auto;
+      .collapse {
+        width: 582px;
+      }
+      .collapse-content {
+        width: 582px;
+        min-height: 249px;
+        padding: 40px 12px 0px 20px;
+        font-size: 18px;
+        .accomodation-equipement {
+          list-style: none;
+          .equipement {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 1024px) {
+  .accomodation-container {
+    .accomodation {
+      margin: 20px 20px;
+      .accomodation-header {
+        .accomodation-title {
+          font-size: 20px;
+        }
+        .accomodation-location {
+          font-size: 16px;
+        }
+      }
+      &-host {
+        display: none;
+      }
+      &-tags-stars {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        .tags {
+          width: 100%;
+          margin-bottom: 16px;
+          justify-content: flex-start;
+          align-items: center;
+
+          .accomodation-tag {
+            font-size: 16px;
+            height: 25px;
+            min-width: 140px;
+            padding: 0 15px;
+          }
+        }
+        .acc-stars-host {
+          width: 100%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .accomodation-stars {
+            .star {
+              width: 24px;
+              margin-left: 0;
+              margin-right: 7px;
+            }
+          }
+          .accomodation-host-mobile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            p {
+              width: 70px;
+              text-align: right;
+              font-size: 16px;
+              color: #ff6060;
+            }
+            img {
+              width: 60px;
+              height: 60px;
+              margin-left: 10px;
+              border-radius: 50px;
+            }
+          }
+        }
+      }
+    }
+    .accomodation-collapse-container {
+      max-width: 1024px;
+      width: auto;
+      margin: 0 20px;
+      flex-direction: column;
+      .collapse-container {
+        max-width: 1024px;
+        width: auto;
+        .collapse {
+          margin: 20px 0px;
+          width: 100%;
+        }
+        .collapse-content {
+          margin: 0px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .accomodation-container {
+    position: relative;
+    .accomodation {
+      padding: 0 20px;
+      .accomodation-header {
+        .accomodation-title {
+          font-size: 18px;
+        }
+        .accomodation-location {
+          font-size: 14px;
+        }
+      }
+
+      &-host {
+        display: none;
+      }
+      &-tags-stars {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        .tags {
+          width: auto;
+          margin-bottom: 16px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: center;
+          row-gap: 10px;
+
+          .accomodation-tag {
+            font-size: 10px;
+            height: 18px;
+            min-width: 84px;
+            padding: 0 15px;
+          }
+        }
+        .acc-stars-host {
+          width: 100%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .accomodation-stars {
+            .star {
+              width: 13px;
+              margin-left: 0;
+              margin-right: 7px;
+            }
+          }
+          .accomodation-host-mobile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            p {
+              width: 70px;
+              text-align: right;
+              font-size: 12px;
+              color: #ff6060;
+            }
+            img {
+              width: 32px;
+              height: 32px;
+              margin-left: 10px;
+              border-radius: 50px;
+            }
+          }
+        }
+      }
+    }
+    .accomodation-collapse-container {
+      flex-direction: column;
+      .collapse-container {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 20px;
+        .collapse {
+          width: 100%;
+        }
+        .collapse-content {
+          min-height: 145px;
+          padding-top: 33px;
+          padding-bottom: 15px;
+          width: auto;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
